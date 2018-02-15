@@ -1,0 +1,11 @@
+.panel , .panel-default{
+  display: inline-block;
+  text-align: center;
+  margin-right: 2em;
+}
+
+p{
+  background-color: rgba(0,0,0,.5);
+  color: #FFF;
+  font-weight: bolder;
+}

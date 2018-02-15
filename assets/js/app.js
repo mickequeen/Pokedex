@@ -1,22 +1,23 @@
 $(document).ready(function(){
-  $.ajax({
-    url: 'https://pokeapi.co/api/v2/pokemon/?limit=802',
-    type: 'GET',
-    success: function (results) {
-      //console.log(results.sprites.front_default);
-      for (var i = 1; i <= 802; i++) {
-        var url = results.results[i].url;
-        $.ajax({
-          url: url,
-          type: 'GET',
-          success: function (data) {
-            var imgPokemon = $('<img src=' + data.sprites.front_default +' id=' + i + '>');
-            $('.pokemon').append(imgPokemon);
-          }
-        })
-      }
-    }
-  });
+ $.ajax({
+   url: 'https://pokeapi.co/api/v2/pokemon/',
+   type: 'GET',
+   success: function (results) {
+     //console.log(results.sprites.front_default);
+     for (var i = 1; i <= 802; i++) {
+       var url = results.results[i].url;
+       $.ajax({
+         url: url,
+         type: 'GET',
+         success: function (data) {
+           var imgPokemon = $('<div class="panel panel-default"><div class="panel-body"><img src=' + data.sprites.front_default +' id=' + i + '></div><p>' + data.name + '</p></div>');
+
+           $('.pokemon').append(imgPokemon);
+         }
+       })
+     }
+   }
+ });
 })
 /*
 $('#mostrar').click(function () {
