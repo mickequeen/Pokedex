@@ -1,3 +1,19 @@
+*{
+  box-sizing: border-box;
+}
+
+.navbar{
+  padding-top: 0.3em;
+  height: 6em;
+  background-color: #DC0A2D;
+}
+
+
+.img-responsive{
+  height: 3em;
+  float: right;
+}
+
 .panel , .panel-default{
   display: inline-block;
   text-align: center;
@@ -8,4 +24,37 @@ p{
   background-color: rgba(0,0,0,.5);
   color: #FFF;
   font-weight: bolder;
+}
+
+#bigBlue{
+  height: 3em;
+  width: 3em;
+  background-color: blue;
+  border: 5px solid white;
+  border-radius: 2em;
+}
+
+.balls{
+  height: 1em;
+  width: 1em;
+  display: inline-block;
+  border-radius: 1em;
+}
+
+#littleRed{
+  background: linear-gradient(to right bottom, #F53535, #8E7E7E);
+  border: 1px solid black;
+  margin-bottom: 1em;
+}
+
+#littleYellow{
+  background: linear-gradient(to right bottom, #F3FF2C, #8E7E7E);
+  border: 1px solid black;
+  margin-bottom: 1em;
+}
+
+#littleGreen{
+  background: linear-gradient(to right bottom, #48E953, #8E7E7E);
+  border: 1px solid black;
+  margin-bottom: 1em;
 }

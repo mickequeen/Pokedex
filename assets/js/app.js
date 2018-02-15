@@ -10,8 +10,7 @@ $(document).ready(function(){
          url: url,
          type: 'GET',
          success: function (data) {
-           var imgPokemon = $('<div class="panel panel-default"><div class="panel-body"><img src=' + data.sprites.front_default +' id=' + i + '></div><p>' + data.name + '</p></div>');
-
+           var imgPokemon = $('<div class="panel panel-default"><div class="panel-body"><button id=' + data.id + '><img src=' + data.sprites.front_default +' id=' + data.id + '></button></div><p>' + data.name + '</p></div>');
            $('.pokemon').append(imgPokemon);
          }
        })
