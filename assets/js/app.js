@@ -10,14 +10,33 @@ $(document).ready(function(){
          url: url,
          type: 'GET',
          success: function (data) {
-           var imgPokemon = $('<div class="panel panel-default"><div class="panel-body"><button id=' + data.id + '><img src=' + data.sprites.front_default +' id=' + data.id + '></button></div><p>' + data.name + '</p></div>');
-           $('.pokemon').append(imgPokemon);
+          var imgPokemon = $('<div class="panel panel-default" id="panel_' + data.id + '"><div class="panel-body"><a data-toggle="modal" href="#myModal"><button id= "button_' + data.id + '"><img src=' + data.sprites.front_default +' id=' + data.id + '></button></a></div><p>' + data.name + '</p></div>');
+          $('.pokemon').append(imgPokemon);
+          /*
+          *colorear según tipo
+          */
+          if (data.types[0].type.name === 'fire') {
+            $('#panel_' + data.id).addClass('fireColor')
+          } if (data.types[0].type.name === 'water') {
+            $('#panel_' + data.id).addClass('waterColor')
+          }
+          $('#button_'+ data.id).click(function(){
+            $('.modal-title , #type , #secondType').empty();
+            $('#title').append(data.name);
+            if (data.types[1] == undefined) {
+            $('#type').append('Tipo: ' + data.types[0].type.name);
+            } else {
+              $('#type').append('Tipo: ' + data.types[0].type.name + '/' + data.types[1].type.name)
+            }
+           })
+
          }
        })
      }
    }
  });
 })
+
 /*
 $('#mostrar').click(function () {
   var num = $('#pokes').val();

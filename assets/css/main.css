@@ -8,6 +8,11 @@
   background-color: #DC0A2D;
 }
 
+main{
+  margin-top: -2em;
+  background-image: url(../img/poke1.jpg);
+  background-position: center;
+}
 
 .img-responsive{
   height: 3em;
@@ -57,4 +62,12 @@ p{
   background: linear-gradient(to right bottom, #48E953, #8E7E7E);
   border: 1px solid black;
   margin-bottom: 1em;
+}
+
+.fireColor{
+  background-color: #F9B482;
+}
+
+.waterColor{
+  background-color: #9F9BF0;
 }

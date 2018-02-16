@@ -10,7 +10,7 @@
 </head>
 <body>
   <header>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-collapse">
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="#">
@@ -21,16 +21,47 @@
             <img alt="Brand" src="assets/img/20180215_120042.png" class="img-responsive">
           </a>
         </div>
+        <form class="navbar-form navbar-left">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Busca tu Pokémon!">
+          </div>
+          <button type="submit" class="btn btn-default">Find!</button>
+        </form>
       </div>
     </nav>
   </header>
   <main>
     <div class="container">
-      <input type="text" name="" id="pokes">
-      <input id="mostrar" type="button" value="mostrar">
       <div class="pokemon">
       </div>
     </div>
+
+    <!-- modal -->
+    <div class="container">
+      <div class="row">
+        <div id="myModal" class="modal fade in">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <a class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></a>
+                      <h4 id="title" class="modal-title"></h4>
+                  </div>
+                  <div class="modal-body">
+                      <h4 id="type"></h4>
+                      <h4 id="secondType"></h4>
+                      <p></p>
+                  </div>
+                  <div class="modal-footer">
+                      <div class="btn-group">
+                          <button class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                      </div>
+                  </div>
+              </div><!-- /.modal-content -->
+          </div><!-- /.modal-dalog -->
+      </div><!-- /.modal -->
+    </div>
+  </div>
+
   </main>
 
  <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
