@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  var arr = [];
  $.ajax({
    url: 'https://pokeapi.co/api/v2/pokemon/?limit=150',
    type: 'GET',
@@ -10,8 +11,15 @@ $(document).ready(function(){
          url: url,
          type: 'GET',
          success: function (data) {
-          var imgPokemon = $('<div class="panel panel-default" id="panel_' + data.id + '"><div class="panel-body"><a data-toggle="modal" href="#myModal"><button class="touch" id= "button_' + data.id + '"><img src=' + data.sprites.front_default +' id=' + data.id + '></button></a></div><p>' + data.name + '</p></div>');
+          
+          arr.push(data.id);
+          arr.sort();
+          arr.forEach( function(e){
+              console.log(e)
+          });
+          var imgPokemon = $('<div class="panel panel-default" id="panel_' + data.id + '"><div class="panel-body"><a data-toggle="modal" href="#myModal"><button class="touch" value= "' + data.id + '"><img src=' + data.sprites.front_default +' id=' + data.id + '></button></a></div><p>' + data.name + '</p></div>');
           $('.pokemon').append(imgPokemon);
+            console.log(arr)
           /*
           *colorear según tipo
           */
@@ -64,13 +72,12 @@ $(document).ready(function(){
               $('#type').append('Type: ' + data.types[0].type.name + '/' + data.types[1].type.name)
             }
            })
-
          }
        })
      }
    }
  });
-})
+});
 
 /*
 $('#mostrar').click(function () {
