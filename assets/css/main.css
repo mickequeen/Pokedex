@@ -16,6 +16,11 @@ main{
 
 .pokemon{
   padding-top: 3em;
+  text-align: center;
+}
+
+.col-lg-2 , .col-md-2 , .col-sm-3 , .col-xs-6{
+  padding-right: 0;
 }
 
 .img-responsive{
@@ -89,7 +94,7 @@ p{
 }
 
 .flyingColor{
-  background-color: #BEF1F6;
+  background-color: #D1E9E7;
 }
 
 .grassColor{
